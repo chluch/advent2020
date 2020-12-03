@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { performance } = require('perf_hooks');
 
-const rawData = fs.readFileSync('./data/day1');
+const rawData = fs.readFileSync('../data/day1');
 let nums = (rawData.toString()).split(/\r?\n/);
 nums = nums.map(n => parseInt(n));
 
