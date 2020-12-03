@@ -17,10 +17,10 @@ const search1 = () => {
     }
   }
 }
-// const t0 = performance.now();
-// const p1v1Answer = calcAnswer(search1());
-// const t1 = performance.now();
-// console.log(`Search 1 took ${(t1 - t0).toFixed(4)} ms`)
+const t0 = performance.now();
+const p1v1Answer = calcAnswer(search1());
+const t1 = performance.now();
+console.log(`Part 1 v1 took ${(t1 - t0).toFixed(4)} ms`)
 
 // Part 1 Solution v2 (Set)
 const numsSet = new Set(nums);
@@ -31,10 +31,11 @@ const search2 = () => {
     }
   }
 }
-// const t2 = performance.now();
-// const p1v2Answer = calcAnswer(search2());
-// const t3 = performance.now();
-// console.log(`Search 2 took ${(t3 - t2).toFixed(4)} ms`)
+const t2 = performance.now();
+const p1v2Answer = calcAnswer(search2());
+const t3 = performance.now();
+console.log(`Part 1 v2 took ${(t3 - t2).toFixed(4)} ms`)
+console.log(`Answer to P1: ${p1v2Answer}`);
 
 // Part 2
 const search3 = () => {
@@ -48,6 +49,9 @@ const search3 = () => {
     }
   }
 }
+const t4 = performance.now();
 const numArr = search3();
 const p2Answer = numArr[0] * numArr[1] * (2020 - numArr[0] - numArr[1]);
-// console.log(p2Answer);
+const t5 = performance.now();
+console.log(`Part 2 took ${(t3 - t2).toFixed(4)} ms`)
+console.log(`Answer to P2: ${p2Answer}`);
