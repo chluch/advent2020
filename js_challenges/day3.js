@@ -1,11 +1,8 @@
 const fs = require('fs');
-// const { performance } = require('perf_hooks');
 
 // Process data
 const rawData = fs.readFileSync('../data/day3');
-// const rawExample = fs.readFileSync('../data/day3_example');
 const rows = rawData.toString().split(/\r?\n/);
-// const rows = rawExample.toString().split(/\r?\n/);
 
 // Part 1
 const countTrees = (rows, rightStep, downStep) => {
