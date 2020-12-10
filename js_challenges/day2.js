@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { performance } = require('perf_hooks');
+// const { performance } = require('perf_hooks');
 
 // Process data
 const rawData = fs.readFileSync('../data/day2');
