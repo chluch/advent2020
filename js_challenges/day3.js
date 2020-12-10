@@ -3,19 +3,28 @@ const fs = require('fs');
 
 // Process data
 const rawData = fs.readFileSync('../data/day3');
+// const rawExample = fs.readFileSync('../data/day3_example');
 const rows = rawData.toString().split(/\r?\n/);
+// const rows = rawExample.toString().split(/\r?\n/);
 
 // Part 1
-let start = 0;
-let trees = 0;
-for (let i = 0; i < rows.length; i += 1) {
-  if (start > rows[i].length) {
-    const newStart = start % rows[i].length;
-    rows[i].charAt(newStart) === '#' ?  trees += 1 : null;
-    start += 3;
-  } else {
-    rows[i].charAt(start) === '#' ?  trees += 1 : null
-    start += 3;
+const countTrees = (rows, rightStep, downStep) => {
+  let start = 0;
+  let trees = 0;
+  for (let i = 0; i < rows.length; i += downStep) {
+    const index = start % rows[i].length;
+    rows[i].charAt(index) === '#' ? trees += 1 : null;
+    start += rightStep;
   }
+return trees;
 }
-console.log(trees);
+console.log(countTrees(rows, 3, 1)); // Answer to part 1
+
+// Part 2
+const a = countTrees(rows, 1, 1);
+const b = countTrees(rows, 3, 1);
+const c = countTrees(rows, 5, 1);
+const d = countTrees(rows, 7, 1);
+const e = countTrees(rows, 1, 2);
+// console.log(a, b, c, d, e);
+console.log(a * b * c * d * e); // Answer to part 2
