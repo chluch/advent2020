@@ -43,7 +43,19 @@ const getIds = (data) => {
     ids.push((findRow(seatChars, 128) * 8 + findColumn(seatChars, 8)));
     return ids;
   })
-  return ids.sort((a, b) => b - a)[0];
+  return ids.sort((a, b) => b - a);
 }
 
-console.log('Answer to Part 1: ', getIds(data));
+console.log('Answer to Part 1: ', getIds(data)[0]);
+
+const arr = (getIds(data));
+const max = arr[0]
+const min = arr[arr.length - 1];
+
+// Part 2
+for (let i = max; i >= min; i -= 1) {
+  if (arr[max - i] !== i) {
+    console.log('Answer to Part 2: ', arr[max - i] + 1); 
+    break;
+  }
+}
